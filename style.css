@@ -277,18 +277,11 @@ h2 {
 }
 
 
-/* ==================== PROJECT SECTION (REVISED) ==================== */
-#projects .container {
+/* ==================== PROJECT SECTION ==================== */
+#projects .projects-grid {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-}
-
-.projects-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;           /* Perbesar gap antar card */
-    padding: 2rem 0;     /* Tambahkan padding atas & bawah */
 }
 
 .project-card-final {
@@ -299,10 +292,6 @@ h2 {
     grid-template-columns: 40% 60%;
     align-items: center;
     gap: 2rem;
-    margin: 0 auto;      /* Tengah secara horizontal */
-    width: 100%;
-    max-width: 1100px;   /* Biar tidak terlalu lebar di layar besar */
-    box-sizing: border-box;
 }
 
 .project-details {
@@ -381,21 +370,21 @@ h2 {
 }
 
 
-/* Experience Section */
+/* ==================== EXPERIENCE SECTION ==================== */
 #experience .container {
     text-align: left;
 }
-.job-entry {
+#experience .job-entry {
     margin-bottom: 3rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid #222;
 }
-.job-header {
+#experience .job-header {
     display: flex;
     align-items: center;
     margin-bottom: 1.5rem;
 }
-.company-logo {
+#experience .company-logo {
     width: 80px;
     height: 80px;
     margin-right: 1.5rem;
@@ -404,19 +393,148 @@ h2 {
     border-radius: 8px;
     object-fit: contain;
 }
-.job-title h3 {
+#experience .job-title h3 {
     font-size: 1.8rem;
     margin-bottom: 0.2rem;
 }
-.job-title h4, .job-title p {
+#experience .job-title h4, #experience .job-title p {
     color: var(--secondary-color);
     font-size: 1rem;
 }
-.job-details ul {
+#experience .job-details ul {
     list-style-position: inside;
     padding-left: 1rem;
 }
-.job-details li {
+#experience .job-details li {
     margin-bottom: 0.5rem;
     color: var(--secondary-color);
+}
+
+/* ==================== CERTIFICATION SECTION ==================== */
+#certification h1 {
+    color: #cda2f3;
+}
+.cert-badges {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+.cert-badge {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+.cert-text {
+    color: var(--secondary-color);
+    max-width: 500px;
+    margin: 1rem auto;
+}
+.certificate-image {
+    max-width: 300px;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border: 1px solid #333;
+}
+.linkedin-link {
+    margin-top: 2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+.linkedin-link a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* ==================== CONTACT SECTION (REVISED) ==================== */
+#contact h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-top: 1rem;
+}
+.typing-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 1rem 0;
+}
+.typing-dots span {
+    width: 10px;
+    height: 10px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    animation: typing 1.4s infinite;
+}
+.typing-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.typing-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+@keyframes typing {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    40% { opacity: 1; transform: scale(1); }
+}
+
+.contact-intro {
+    max-width: 600px;
+    color: var(--secondary-color);
+    margin: 1rem auto 3rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem 2.5rem;
+    width: 100%;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+.contact-item:hover {
+    transform: translateY(-5px);
+}
+.contact-item > i:first-child {
+    font-size: 1.5rem;
+    background-color: var(--card-bg-color);
+    border: 1px solid #222;
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    color: var(--primary-color);
+}
+.contact-text-content {
+    display: flex;
+    flex-direction: column;
+}
+.contact-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+    color: #cda2f3;
+    font-weight: 700;
+}
+.contact-item h3 i {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    color: #cda2f3;
+}
+.contact-item p {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    line-height: 1.4;
 }
