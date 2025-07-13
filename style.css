@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #a0a0a0;
+    --background-color: #000000;
+    --accent-color: #00aaff; /* Warna aksen biru */
+    --accent-color-gold: #c5a47e; /* Warna emas/oranye baru untuk kartu */
+    --card-bg-color: #121212; /* Warna latar kartu lebih gelap */
+    --project1-bg: #0E1B2B;
+    --project2-bg: #2c1c0e;
+    --project3-bg: #101010;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    line-height: 1.6;
+    background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.15), transparent 40%), radial-gradient(circle at bottom left, rgba(121, 68, 154, 0.15), transparent 50%);
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 1rem 5%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo span {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--secondary-color);
+    display: block;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.social-icons a {
+    color: var(--primary-color);
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+}
+
+main {
+    padding-top: 80px; /* Jarak untuk header fixed */
+}
+
+.section-full {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 900;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+.intro-text {
+    max-width: 500px;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin: 0 auto;
+}
+
+/* ==================== SKILLS SLIDER STYLES ==================== */
+
+#skills h1 {
+    color: #cda2f3;
+}
+
+.skills-carousel-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.skills-slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.skills-slider-container::before,
+.skills-slider-container::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 90%;
+    height: 100%;
+    background-color: var(--card-bg-color);
+    border-radius: 20px;
+    border: 1px solid #222;
+    z-index: -1;
+    transition: transform 0.5s ease-in-out;
+}
+
+.skills-slider-container::before {
+    transform: translateX(-50%) translateY(-10px) scale(0.95);
+    z-index: -2;
+}
+
+.skills-slider-container::after {
+    transform: translateX(-50%) translateY(-20px) scale(0.90);
+    z-index: -3;
+}
+
+
+.skills-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.skill-card {
+    min-width: 100%;
+    background-color: var(--card-bg-color);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid #222;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+.skill-card h3 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.25rem;
+    color: var(--primary-color);
+}
+
+.skill-card .subtitle {
+    text-align: center;
+    color: var(--accent-color-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--accent-color-gold);
+    padding-bottom: 1.5rem;
+}
+
+.skills-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.skills-list li {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    color: var(--primary-color);
+}
+
+.skills-list i {
+    font-size: 1.5rem;
+    width: 40px;
+    margin-right: 1rem;
+    color: var(--primary-color);
+}
+
+.skill-card .card-footer {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    line-height: 1.5;
+    text-align: center;
+    font-style: normal;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.slider-arrow {
+    background: transparent;
+    border: 1px solid #444;
+    color: #888;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-arrow:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+
+/* ==================== PROJECT SECTION (REVISED) ==================== */
+#projects .container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;           /* Perbesar gap antar card */
+    padding: 2rem 0;     /* Tambahkan padding atas & bawah */
+}
+
+.project-card-final {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 auto;      /* Tengah secara horizontal */
+    width: 100%;
+    max-width: 1100px;   /* Biar tidak terlalu lebar di layar besar */
+    box-sizing: border-box;
+}
+
+.project-details {
+    padding-right: 2rem;
+    text-align: left;
+}
+
+.project-details h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.project-details h3 i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    vertical-align: middle;
+    margin-left: 1rem;
+}
+
+.project-location {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+.project-role {
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.project-details h4 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.project-description {
+    color: var(--secondary-color);
+    max-width: 500px;
+    margin-bottom: 2.5rem;
+}
+
+.btn-case-study {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 30px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-case-study:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.project-image-container {
+    background-color: rgba(0,0,0,0.2);
+    padding: 2rem;
+    border-radius: 12px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+
+/* Experience Section */
+#experience .container {
+    text-align: left;
+}
+.job-entry {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #222;
+}
+.job-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.company-logo {
+    width: 80px;
+    height: 80px;
+    margin-right: 1.5rem;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+.job-title h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+}
+.job-title h4, .job-title p {
+    color: var(--secondary-color);
+    font-size: 1rem;
+}
+.job-details ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+.job-details li {
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
